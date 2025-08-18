@@ -71,14 +71,14 @@ const ExperienceTimeline = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-primary mb-4">Experiência Profissional</h2>
-          <p className="text-lg text-text-secondary max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Trajetória profissional sólida com crescimento consistente na área de tecnologia da informação
           </p>
         </div>
 
         <div className="relative">
           {/* Timeline line */}
-          <div className="hidden md:block absolute left-1/2 transform -translate-x-px h-full w-0.5 bg-gradient-to-b from-primary to-tech-blue-light"></div>
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-px h-full w-0.5 bg-gradient-to-b from-primary to-tech-green-light"></div>
 
           {/* Timeline items */}
           <div className="space-y-12">
@@ -86,28 +86,28 @@ const ExperienceTimeline = () => {
               <div key={exp.id} className={`flex items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
                 {/* Content */}
                 <div className={`w-full md:w-5/12 ${index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'}`}>
-                  <Card className={`shadow-lg hover:shadow-xl transition-all duration-300 ${exp.current ? 'ring-2 ring-primary' : ''}`}>
+                  <Card className={`shadow-lg hover:shadow-xl transition-all duration-300 bg-card border-border ${exp.current ? 'ring-2 ring-primary' : ''}`}>
                     <CardHeader>
                       <div className="flex items-start justify-between">
                         <div>
                           <CardTitle className="text-xl text-primary mb-2">{exp.title}</CardTitle>
                           <div className="space-y-1">
-                            <div className="flex items-center text-text-secondary">
+                            <div className="flex items-center text-muted-foreground">
                               <Building2 className="w-4 h-4 mr-2" />
                               <span className="font-medium">{exp.company}</span>
                             </div>
-                            <div className="flex items-center text-text-secondary">
+                            <div className="flex items-center text-muted-foreground">
                               <MapPin className="w-4 h-4 mr-2" />
                               <span>{exp.location}</span>
                             </div>
-                            <div className="flex items-center text-text-secondary">
+                            <div className="flex items-center text-muted-foreground">
                               <Calendar className="w-4 h-4 mr-2" />
                               <span>{exp.period}</span>
                             </div>
                           </div>
                         </div>
                         {exp.current && (
-                          <Badge className="bg-green-100 text-green-800">Atual</Badge>
+                          <Badge className="bg-primary/20 text-primary border-primary/30">Atual</Badge>
                         )}
                       </div>
                     </CardHeader>
@@ -115,7 +115,7 @@ const ExperienceTimeline = () => {
                       <div className="space-y-4">
                         <div>
                           <h4 className="font-semibold text-primary mb-3">Principais Responsabilidades:</h4>
-                          <ul className="space-y-1 text-text-secondary">
+                          <ul className="space-y-1 text-muted-foreground">
                             {exp.responsibilities.map((resp, idx) => (
                               <li key={idx} className="text-sm">• {resp}</li>
                             ))}
@@ -125,7 +125,7 @@ const ExperienceTimeline = () => {
                           <h4 className="font-semibold text-primary mb-2">Competências:</h4>
                           <div className="flex flex-wrap gap-2">
                             {exp.skills.map((skill, idx) => (
-                              <Badge key={idx} variant="secondary" className="text-xs">
+                              <Badge key={idx} variant="secondary" className="text-xs bg-primary/20 text-primary">
                                 {skill}
                               </Badge>
                             ))}
@@ -141,7 +141,7 @@ const ExperienceTimeline = () => {
                   <div className={`w-8 h-8 rounded-full flex items-center justify-center ${
                     exp.current 
                       ? 'bg-primary ring-4 ring-primary/30' 
-                      : 'bg-tech-blue'
+                      : 'bg-tech-green'
                   }`}>
                     <div className="w-3 h-3 bg-white rounded-full"></div>
                   </div>

@@ -8,7 +8,7 @@ const ProfessionalSummary = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-primary mb-4">Resumo Profissional</h2>
-          <p className="text-lg text-text-secondary max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Profissional experiente em tecnologia da informação com sólida formação acadêmica e 
             ampla experiência prática em infraestrutura, redes e suporte técnico.
           </p>
@@ -16,33 +16,33 @@ const ProfessionalSummary = () => {
 
         <div className="grid md:grid-cols-3 gap-8 mb-12">
           {/* Especializations */}
-          <Card className="shadow-md hover:shadow-lg transition-shadow">
+          <Card className="shadow-md hover:shadow-lg transition-shadow bg-card border-border">
             <CardHeader className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-primary to-tech-blue rounded-full flex items-center justify-center mx-auto mb-4">
-                <Award className="w-8 h-8 text-white" />
+              <div className="w-16 h-16 bg-gradient-to-br from-primary to-tech-green-light rounded-full flex items-center justify-center mx-auto mb-4">
+                <Award className="w-8 h-8 text-primary-foreground" />
               </div>
               <CardTitle className="text-primary">Especializações</CardTitle>
             </CardHeader>
             <CardContent className="text-center">
               <div className="space-y-2">
-                <Badge variant="secondary" className="mr-2 mb-2">Redes FTTH/FTTX</Badge>
-                <Badge variant="secondary" className="mr-2 mb-2">Infraestrutura de TI</Badge>
-                <Badge variant="secondary" className="mr-2 mb-2">Suporte Técnico</Badge>
-                <Badge variant="secondary" className="mr-2 mb-2">Certificações Cisco</Badge>
+                <Badge variant="secondary" className="mr-2 mb-2 bg-primary/20 text-primary">Redes FTTH/FTTX</Badge>
+                <Badge variant="secondary" className="mr-2 mb-2 bg-primary/20 text-primary">Infraestrutura de TI</Badge>
+                <Badge variant="secondary" className="mr-2 mb-2 bg-primary/20 text-primary">Suporte Técnico</Badge>
+                <Badge variant="secondary" className="mr-2 mb-2 bg-primary/20 text-primary">Certificações Cisco</Badge>
               </div>
             </CardContent>
           </Card>
 
           {/* Achievements */}
-          <Card className="shadow-md hover:shadow-lg transition-shadow">
+          <Card className="shadow-md hover:shadow-lg transition-shadow bg-card border-border">
             <CardHeader className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-primary to-tech-blue rounded-full flex items-center justify-center mx-auto mb-4">
-                <TrendingUp className="w-8 h-8 text-white" />
+              <div className="w-16 h-16 bg-gradient-to-br from-primary to-tech-green-light rounded-full flex items-center justify-center mx-auto mb-4">
+                <TrendingUp className="w-8 h-8 text-primary-foreground" />
               </div>
               <CardTitle className="text-primary">Principais Conquistas</CardTitle>
             </CardHeader>
             <CardContent className="text-center">
-              <ul className="text-text-secondary space-y-2">
+              <ul className="text-muted-foreground space-y-2">
                 <li>• Certificações Cisco em Redes</li>
                 <li>• Especialização em Fibra Óptica</li>
                 <li>• Formação em Gestão de TI</li>
@@ -52,15 +52,15 @@ const ProfessionalSummary = () => {
           </Card>
 
           {/* Career Goals */}
-          <Card className="shadow-md hover:shadow-lg transition-shadow">
+          <Card className="shadow-md hover:shadow-lg transition-shadow bg-card border-border">
             <CardHeader className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-primary to-tech-blue rounded-full flex items-center justify-center mx-auto mb-4">
-                <Target className="w-8 h-8 text-white" />
+              <div className="w-16 h-16 bg-gradient-to-br from-primary to-tech-green-light rounded-full flex items-center justify-center mx-auto mb-4">
+                <Target className="w-8 h-8 text-primary-foreground" />
               </div>
               <CardTitle className="text-primary">Objetivos de Carreira</CardTitle>
             </CardHeader>
             <CardContent className="text-center">
-              <ul className="text-text-secondary space-y-2">
+              <ul className="text-muted-foreground space-y-2">
                 <li>• Liderança em Projetos de TI</li>
                 <li>• Gestão de Infraestrutura</li>
                 <li>• Desenvolvimento de Soluções</li>
@@ -71,12 +71,12 @@ const ProfessionalSummary = () => {
         </div>
 
         {/* Detailed Summary */}
-        <Card className="shadow-lg">
+        <Card className="shadow-lg bg-card border-border">
           <CardHeader>
             <CardTitle className="text-2xl text-primary text-center">Perfil Detalhado</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="prose prose-lg max-w-none text-text-secondary">
+            <div className="prose prose-lg max-w-none text-muted-foreground">
               <p className="text-center leading-relaxed">
                 Tecnólogo em Gestão da Tecnologia da Informação com sólida experiência em infraestrutura de TI, 
                 especializado em instalação e manutenção de redes ópticas FTTH/FTTX. Possui certificações Cisco 

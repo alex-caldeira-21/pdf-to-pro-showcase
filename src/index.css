@@ -8,47 +8,49 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 210 15% 15%;
+    --background: 220 15% 6%;
+    --foreground: 210 40% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 210 15% 15%;
+    --card: 220 15% 8%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 210 15% 15%;
+    --popover: 220 15% 8%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 217 91% 50%;
-    --primary-foreground: 0 0% 98%;
+    --primary: 142 76% 36%;
+    --primary-foreground: 220 15% 6%;
 
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 217 91% 50%;
+    --secondary: 220 15% 12%;
+    --secondary-foreground: 142 76% 36%;
 
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;
+    --muted: 220 15% 12%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 217 91% 50%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 142 76% 36%;
+    --accent-foreground: 220 15% 6%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 217 91% 50%;
+    --border: 220 15% 18%;
+    --input: 220 15% 18%;
+    --ring: 142 76% 36%;
 
-    /* Custom design tokens */
-    --tech-blue: 217 91% 50%;
-    --tech-blue-light: 217 91% 65%;
-    --tech-blue-dark: 217 91% 35%;
-    --tech-gradient: linear-gradient(135deg, hsl(217 91% 50%) 0%, hsl(200 100% 50%) 100%);
-    --hero-gradient: linear-gradient(135deg, hsl(217 91% 50%) 0%, hsl(200 100% 50%) 50%, hsl(180 100% 50%) 100%);
-    --surface: 0 0% 98%;
-    --surface-elevated: 0 0% 100%;
-    --text-primary: 210 15% 15%;
-    --text-secondary: 215 16% 47%;
-    --shadow-soft: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-    --shadow-medium: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    --shadow-large: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    /* Custom design tokens - Dark Mode */
+    --tech-green: 142 76% 36%;
+    --tech-green-light: 142 76% 50%;
+    --tech-green-dark: 142 76% 25%;
+    --tech-green-subtle: 142 30% 20%;
+    --tech-gradient: linear-gradient(135deg, hsl(142 76% 36%) 0%, hsl(120 100% 25%) 100%);
+    --hero-gradient: linear-gradient(135deg, hsl(142 76% 36%) 0%, hsl(120 100% 25%) 50%, hsl(160 100% 20%) 100%);
+    --surface: 220 15% 4%;
+    --surface-elevated: 220 15% 8%;
+    --surface-card: 220 15% 10%;
+    --text-primary: 210 40% 98%;
+    --text-secondary: 215 20% 65%;
+    --shadow-soft: 0 1px 3px 0 rgb(0 0 0 / 0.4), 0 1px 2px -1px rgb(0 0 0 / 0.4);
+    --shadow-medium: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.4);
+    --shadow-large: 0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -4px rgb(0 0 0 / 0.4);
 
     --radius: 0.5rem;
 

@@ -47,11 +47,11 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-primary to-tech-blue-light">
+    <section className="py-20 bg-gradient-to-br from-primary to-tech-green-light">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-white mb-4">Entre em Contato</h2>
-          <p className="text-lg text-blue-100 max-w-2xl mx-auto">
+          <h2 className="text-4xl font-bold text-primary-foreground mb-4">Entre em Contato</h2>
+          <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto">
             Estou sempre aberto a novas oportunidades e projetos interessantes. 
             Vamos conversar sobre como posso contribuir com sua equipe!
           </p>
@@ -64,11 +64,11 @@ const ContactForm = () => {
             <Card className="bg-white/95 backdrop-blur-sm shadow-xl">
               <CardContent className="pt-6">
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-primary to-tech-blue rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Mail className="w-8 h-8 text-white" />
+                  <div className="w-16 h-16 bg-gradient-to-br from-primary to-tech-green-light rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Mail className="w-8 h-8 text-primary-foreground" />
                   </div>
                   <h3 className="font-semibold text-primary mb-2">Email</h3>
-                  <p className="text-text-secondary">alex-belchior-@hotmail.com</p>
+                  <p className="text-muted-foreground">alex-belchior-@hotmail.com</p>
                 </div>
               </CardContent>
             </Card>
@@ -76,11 +76,11 @@ const ContactForm = () => {
             <Card className="bg-white/95 backdrop-blur-sm shadow-xl">
               <CardContent className="pt-6">
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-primary to-tech-blue rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Phone className="w-8 h-8 text-white" />
+                  <div className="w-16 h-16 bg-gradient-to-br from-primary to-tech-green-light rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Phone className="w-8 h-8 text-primary-foreground" />
                   </div>
                   <h3 className="font-semibold text-primary mb-2">Telefone</h3>
-                  <p className="text-text-secondary">(14) 99683-1894</p>
+                  <p className="text-muted-foreground">(14) 99683-1894</p>
                 </div>
               </CardContent>
             </Card>
@@ -88,11 +88,11 @@ const ContactForm = () => {
             <Card className="bg-white/95 backdrop-blur-sm shadow-xl">
               <CardContent className="pt-6">
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-primary to-tech-blue rounded-full flex items-center justify-center mx-auto mb-4">
-                    <MapPin className="w-8 h-8 text-white" />
+                  <div className="w-16 h-16 bg-gradient-to-br from-primary to-tech-green-light rounded-full flex items-center justify-center mx-auto mb-4">
+                    <MapPin className="w-8 h-8 text-primary-foreground" />
                   </div>
                   <h3 className="font-semibold text-primary mb-2">Localização</h3>
-                  <p className="text-text-secondary">Jaú, São Paulo</p>
+                  <p className="text-muted-foreground">Jaú, São Paulo</p>
                 </div>
               </CardContent>
             </Card>
@@ -115,14 +115,14 @@ const ContactForm = () => {
                         Nome Completo *
                       </Label>
                       <div className="relative">
-                        <User className="absolute left-3 top-3 w-4 h-4 text-text-secondary" />
+                        <User className="absolute left-3 top-3 w-4 h-4 text-muted-foreground" />
                         <Input
                           id="name"
                           name="name"
                           value={formData.name}
                           onChange={handleChange}
                           placeholder="Seu nome completo"
-                          className="pl-10"
+                          className="pl-10 bg-background border-border"
                           required
                         />
                       </div>
@@ -132,7 +132,7 @@ const ContactForm = () => {
                         Email *
                       </Label>
                       <div className="relative">
-                        <Mail className="absolute left-3 top-3 w-4 h-4 text-text-secondary" />
+                        <Mail className="absolute left-3 top-3 w-4 h-4 text-muted-foreground" />
                         <Input
                           id="email"
                           name="email"
@@ -140,7 +140,7 @@ const ContactForm = () => {
                           value={formData.email}
                           onChange={handleChange}
                           placeholder="seu@email.com"
-                          className="pl-10"
+                          className="pl-10 bg-background border-border"
                           required
                         />
                       </div>
@@ -153,14 +153,14 @@ const ContactForm = () => {
                         Telefone
                       </Label>
                       <div className="relative">
-                        <Phone className="absolute left-3 top-3 w-4 h-4 text-text-secondary" />
+                        <Phone className="absolute left-3 top-3 w-4 h-4 text-muted-foreground" />
                         <Input
                           id="phone"
                           name="phone"
                           value={formData.phone}
                           onChange={handleChange}
                           placeholder="(00) 00000-0000"
-                          className="pl-10"
+                          className="pl-10 bg-background border-border"
                         />
                       </div>
                     </div>
@@ -174,6 +174,7 @@ const ContactForm = () => {
                         value={formData.subject}
                         onChange={handleChange}
                         placeholder="Assunto da mensagem"
+                        className="bg-background border-border"
                         required
                       />
                     </div>
@@ -189,7 +190,7 @@ const ContactForm = () => {
                       value={formData.message}
                       onChange={handleChange}
                       placeholder="Descreva sua mensagem, proposta ou oportunidade..."
-                      className="min-h-[120px]"
+                      className="min-h-[120px] bg-background border-border"
                       required
                     />
                   </div>
@@ -198,11 +199,11 @@ const ContactForm = () => {
                     type="submit"
                     size="lg"
                     disabled={isSubmitting}
-                    className="w-full bg-primary hover:bg-tech-blue text-white font-semibold py-3"
+                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-3"
                   >
                     {isSubmitting ? (
                       <>
-                        <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
+                        <div className="w-4 h-4 border-2 border-primary-foreground border-t-transparent rounded-full animate-spin mr-2"></div>
                         Enviando...
                       </>
                     ) : (
@@ -220,19 +221,19 @@ const ContactForm = () => {
 
         {/* Call to Action */}
         <div className="mt-16 text-center">
-          <Card className="bg-white/10 backdrop-blur-sm border-white/20 shadow-xl">
+          <Card className="bg-surface/10 backdrop-blur-sm border-primary/20 shadow-xl">
             <CardContent className="pt-8">
-              <h3 className="text-2xl font-bold text-white mb-4">Vamos Trabalhar Juntos?</h3>
-              <p className="text-blue-100 text-lg mb-6 max-w-2xl mx-auto">
+              <h3 className="text-2xl font-bold text-primary-foreground mb-4">Vamos Trabalhar Juntos?</h3>
+              <p className="text-primary-foreground/80 text-lg mb-6 max-w-2xl mx-auto">
                 Estou disponível para oportunidades em tempo integral, projetos freelancer ou consultorias. 
                 Entre em contato para discutirmos como posso agregar valor ao seu negócio.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="bg-white text-primary hover:bg-blue-50">
+                <Button size="lg" className="bg-background text-primary hover:bg-background/90">
                   <Phone className="w-5 h-5 mr-2" />
                   Ligar Agora
                 </Button>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary">
+                <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
                   <Mail className="w-5 h-5 mr-2" />
                   Enviar Email
                 </Button>

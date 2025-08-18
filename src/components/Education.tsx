@@ -79,7 +79,7 @@ const Education = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-primary mb-4">Formação Acadêmica</h2>
-          <p className="text-lg text-text-secondary max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Base sólida de conhecimento através de formação acadêmica consistente e certificações especializadas
           </p>
         </div>
@@ -92,31 +92,31 @@ const Education = () => {
           </h3>
           <div className="space-y-6">
             {educationData.map((edu) => (
-              <Card key={edu.id} className={`shadow-md hover:shadow-lg transition-shadow ${edu.current ? 'ring-2 ring-primary' : ''}`}>
+              <Card key={edu.id} className={`shadow-md hover:shadow-lg transition-shadow bg-card border-border ${edu.current ? 'ring-2 ring-primary' : ''}`}>
                 <CardHeader>
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
                       <CardTitle className="text-lg text-primary mb-2">{edu.title}</CardTitle>
                       <div className="space-y-1">
-                        <div className="flex items-center text-text-secondary">
+                        <div className="flex items-center text-muted-foreground">
                           <BookOpen className="w-4 h-4 mr-2" />
                           <span className="font-medium">{edu.institution}</span>
                         </div>
-                        <div className="flex items-center text-text-secondary">
+                        <div className="flex items-center text-muted-foreground">
                           <Calendar className="w-4 h-4 mr-2" />
                           <span>{edu.period}</span>
                         </div>
                       </div>
                     </div>
                     <div className="text-right">
-                      <Badge className={edu.current ? 'bg-blue-100 text-blue-800' : 'bg-green-100 text-green-800'}>
+                      <Badge className={edu.current ? 'bg-primary/20 text-primary border-primary/30' : 'bg-primary/20 text-primary border-primary/30'}>
                         {edu.status}
                       </Badge>
                     </div>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-text-secondary">{edu.description}</p>
+                  <p className="text-muted-foreground">{edu.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -131,15 +131,15 @@ const Education = () => {
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {certifications.map((cert, index) => (
-              <Card key={index} className="shadow-md hover:shadow-lg transition-shadow">
+              <Card key={index} className="shadow-md hover:shadow-lg transition-shadow bg-card border-border">
                 <CardContent className="pt-6">
                   <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-primary to-tech-blue rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Award className="w-8 h-8 text-white" />
+                    <div className="w-16 h-16 bg-gradient-to-br from-primary to-tech-green-light rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Award className="w-8 h-8 text-primary-foreground" />
                     </div>
                     <h4 className="font-semibold text-primary mb-2">{cert.name}</h4>
-                    <p className="text-text-secondary text-sm mb-3">{cert.issuer}</p>
-                    <Badge variant="secondary" className="text-xs">
+                    <p className="text-muted-foreground text-sm mb-3">{cert.issuer}</p>
+                    <Badge variant="secondary" className="text-xs bg-primary/20 text-primary">
                       {cert.category}
                     </Badge>
                   </div>
@@ -151,11 +151,11 @@ const Education = () => {
 
         {/* Skills Summary */}
         <div className="mt-16">
-          <Card className="shadow-lg bg-gradient-to-r from-primary to-tech-blue text-white">
+          <Card className="shadow-lg bg-gradient-to-r from-primary to-tech-green-light text-primary-foreground">
             <CardContent className="pt-8">
               <div className="text-center">
                 <h3 className="text-2xl font-bold mb-4">Resumo de Qualificações</h3>
-                <p className="text-blue-100 text-lg max-w-3xl mx-auto">
+                <p className="text-primary-foreground/90 text-lg max-w-3xl mx-auto">
                   Combinação única de formação acadêmica em gestão de TI com certificações técnicas especializadas, 
                   proporcionando uma visão abrangente desde a estratégia até a implementação técnica de soluções de tecnologia.
                 </p>

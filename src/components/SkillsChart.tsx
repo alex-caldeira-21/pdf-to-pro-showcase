@@ -84,10 +84,10 @@ const SkillsChart = () => {
   const activeCategory = skillCategories.find(cat => cat.id === selectedCategory);
 
   const getSkillColor = (level: number) => {
-    if (level >= 90) return "bg-green-500";
-    if (level >= 80) return "bg-blue-500";
-    if (level >= 70) return "bg-yellow-500";
-    return "bg-orange-500";
+    if (level >= 90) return "bg-primary";
+    if (level >= 80) return "bg-tech-green-light";
+    if (level >= 70) return "bg-tech-green-subtle";
+    return "bg-muted";
   };
 
   const getSkillLabel = (level: number) => {
@@ -102,7 +102,7 @@ const SkillsChart = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-primary mb-4">Competências & Habilidades</h2>
-          <p className="text-lg text-text-secondary max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Domínio técnico abrangente com experiência prática em múltiplas áreas da tecnologia da informação
           </p>
         </div>
@@ -110,7 +110,7 @@ const SkillsChart = () => {
         <div className="grid lg:grid-cols-4 gap-8">
           {/* Category Selector */}
           <div className="lg:col-span-1">
-            <Card className="shadow-md">
+            <Card className="shadow-md bg-card border-border">
               <CardHeader>
                 <CardTitle className="text-lg text-primary">Categorias</CardTitle>
               </CardHeader>
@@ -123,11 +123,11 @@ const SkillsChart = () => {
                       onClick={() => setSelectedCategory(category.id)}
                       className={`w-full text-left p-3 rounded-lg transition-colors flex items-center gap-3 ${
                         selectedCategory === category.id
-                          ? 'bg-primary text-white'
-                          : 'hover:bg-gray-50'
+                          ? 'bg-primary text-primary-foreground'
+                          : 'hover:bg-muted'
                       }`}
                     >
-                      <IconComponent className={`w-5 h-5 ${selectedCategory === category.id ? 'text-white' : category.color}`} />
+                      <IconComponent className={`w-5 h-5 ${selectedCategory === category.id ? 'text-primary-foreground' : category.color}`} />
                       <span className="font-medium">{category.name}</span>
                     </button>
                   );
@@ -139,15 +139,15 @@ const SkillsChart = () => {
           {/* Skills Display */}
           <div className="lg:col-span-3">
             {activeCategory && (
-              <Card className="shadow-lg">
+              <Card className="shadow-lg bg-card border-border">
                 <CardHeader>
                   <div className="flex items-center gap-3">
-                    <div className={`w-12 h-12 rounded-full bg-gradient-to-br from-primary to-tech-blue flex items-center justify-center`}>
-                      <activeCategory.icon className="w-6 h-6 text-white" />
+                    <div className={`w-12 h-12 rounded-full bg-gradient-to-br from-primary to-tech-green-light flex items-center justify-center`}>
+                      <activeCategory.icon className="w-6 h-6 text-primary-foreground" />
                     </div>
                     <div>
                       <CardTitle className="text-2xl text-primary">{activeCategory.name}</CardTitle>
-                      <p className="text-text-secondary">Nível de proficiência nas principais habilidades</p>
+                      <p className="text-muted-foreground">Nível de proficiência nas principais habilidades</p>
                     </div>
                   </div>
                 </CardHeader>
@@ -158,10 +158,10 @@ const SkillsChart = () => {
                         <div className="flex items-center justify-between">
                           <div>
                             <h4 className="font-semibold text-primary">{skill.name}</h4>
-                            <p className="text-sm text-text-secondary">{skill.description}</p>
+                            <p className="text-sm text-muted-foreground">{skill.description}</p>
                           </div>
                           <div className="text-right">
-                            <Badge variant="secondary" className="mb-1">
+                            <Badge variant="secondary" className="mb-1 bg-primary/20 text-primary">
                               {getSkillLabel(skill.level)}
                             </Badge>
                             <div className="text-sm font-medium text-primary">{skill.level}%</div>
@@ -187,7 +187,7 @@ const SkillsChart = () => {
 
         {/* Overall Skills Summary */}
         <div className="mt-16">
-          <Card className="shadow-lg">
+          <Card className="shadow-lg bg-card border-border">
             <CardHeader>
               <CardTitle className="text-2xl text-primary text-center">Resumo Geral de Competências</CardTitle>
             </CardHeader>
