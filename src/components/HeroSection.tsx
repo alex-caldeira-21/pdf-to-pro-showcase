@@ -103,10 +103,14 @@ const HeroSection = () => {
             className="relative"
           >
             <Card className="p-8 bg-card/95 backdrop-blur-sm shadow-2xl border-border">
-              <div className="text-center mb-6">
-                <div className="w-32 h-32 bg-gradient-to-br from-primary to-tech-green-light rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg">
-                  <span className="text-4xl font-bold text-primary-foreground">AR</span>
-                </div>
+              <div className="w-32 h-32 rounded-full mx-auto mb-4 shadow-lg overflow-hidden">
+                    <img
+                    src="/Profile.jpg" // Coloque sua imagem em public/profile.png
+                    alt="Foto de Perfil"
+                    className="w-full h-full object-cover"
+                  />
+              </div>
+
                 <h3 className="text-2xl font-bold text-primary mb-2">Perfil Profissional</h3>
               </div>
               
@@ -117,7 +121,7 @@ const HeroSection = () => {
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-muted-foreground">Estado Civil:</span>
-                  <span className="font-semibold text-foreground">Solteiro</span>
+                  <span className="font-semibold text-foreground">União Estável</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-muted-foreground">CNH:</span>
