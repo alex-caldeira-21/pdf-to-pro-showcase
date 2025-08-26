@@ -4,28 +4,35 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, MapPin, Send, User, MessageSquare } from "lucide-react";
 
+interface FormData {
+  name: string;
+  email: string;
+  phone: string;
+  subject: string;
+  message: string;
+}
+
 const ContactForm = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
     phone: "",
     subject: "",
     message: ""
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
     setIsSubmitting(true);
 
@@ -48,10 +55,7 @@ const ContactForm = () => {
       });
 
       if (response.ok) {
-        toast({
-          title: "Mensagem Enviada!",
-          description: "Sua mensagem foi enviada com sucesso. Retornarei o contato em breve.",
-        });
+        alert('Mensagem enviada com sucesso! Retornarei o contato em breve.');
         
         // Reset do formulário
         setFormData({
@@ -66,19 +70,15 @@ const ContactForm = () => {
       }
     } catch (error) {
       console.error('Erro ao enviar:', error);
-      toast({
-        title: "Erro ao enviar",
-        description: "Houve um problema ao enviar sua mensagem. Tente novamente ou entre em contato diretamente.",
-        variant: "destructive"
-      });
+      alert('Houve um problema ao enviar sua mensagem. Tente novamente ou entre em contato diretamente.');
     } finally {
       setIsSubmitting(false);
     }
   };
 
   // Função para abrir WhatsApp
-  const handleWhatsAppContact = () => {
-    const phoneNumber = "5514996831894"; // Seu número com código do país
+  const handleWhatsAppContact = (): void => {
+    const phoneNumber = "5514996831894";
     const message = "Olá! Vim através do seu portfólio e gostaria de conversar sobre oportunidades.";
     const encodedMessage = encodeURIComponent(message);
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
@@ -99,7 +99,6 @@ const ContactForm = () => {
         <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {/* Contact Information */}
           <div className="lg:col-span-1 space-y-6">
-            {/* Contact Cards */}
             <Card className="bg-white/95 backdrop-blur-sm shadow-xl">
               <CardContent className="pt-6">
                 <div className="text-center">
