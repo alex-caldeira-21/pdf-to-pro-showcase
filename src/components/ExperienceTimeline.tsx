@@ -4,12 +4,28 @@ import { Building2, MapPin, Calendar } from "lucide-react";
 
 const experiences = [
   {
-    id: 1,
+  "id": 1,
+  "title": "Técnico de Infraestrutura",
+  "company": "Vero SA",
+  "period": "2025 - Atualmente",
+  "location": "Jaú/SP",
+  "current": true,
+  "responsibilities": [
+    "Instalação e manutenção de infraestrutura de fibra óptica",
+    "Manutenção e instalação de equipamentos de rede, como switches e roteadores",
+    "Manutenção preventiva e corretiva de sistemas de ar condicionado em Pontos de Presença (POPs)",
+    "Operação e manutenção de geradores de energia a combustão para garantir a continuidade dos serviços em caso de falha elétrica",
+    "Monitoramento e diagnóstico da infraestrutura de rede para assegurar a estabilidade dos serviços"
+  ],
+  "skills": ["Fibra Óptica", "Manutenção de Redes", "Infraestrutura de POPs", "Manutenção de Ar Condicionado", "Geradores de Energia", "Equipamentos de Rede"]
+},
+  {
+    id: 2,
     title: "Técnico FTTX",
     company: "Tel Telecomunicações (Vivo Fibra)",
-    period: "Atual",
+    period: "2023 - 2025",
     location: "Jaú/SP",
-    current: true,
+    current: false,
     responsibilities: [
       "Instalação e manutenção de redes ópticas (FTTH/FTTX)",
       "Suporte técnico a clientes residenciais e empresariais", 
@@ -19,7 +35,7 @@ const experiences = [
     skills: ["Fibra Óptica", "FTTH", "FTTX", "Suporte Técnico", "Redes Ópticas"]
   },
   {
-    id: 2,
+    id: 3,
     title: "Técnico em Informática",
     company: "Central Informática",
     period: "2019 - 2023",
@@ -34,7 +50,7 @@ const experiences = [
     skills: ["Manutenção PC", "Sistemas Operacionais", "Suporte Remoto", "Hardware"]
   },
   {
-    id: 3,
+    id: 4,
     title: "Estagiário de TI",
     company: "Fundação Amaral Carvalho",
     period: "2018 - 2019",
@@ -49,7 +65,7 @@ const experiences = [
     skills: ["Infraestrutura", "Redes Internas", "Cabeamento", "Suporte TI"]
   },
   {
-    id: 4,
+    id: 5,
     title: "Monitor de Informática",
     company: "Programa Acessa Escola",
     period: "2017 - 2018",
