@@ -110,10 +110,7 @@ const HeroSection = () => {
                     className="w-full h-full object-cover"
                   />
               </div>
-
-                <h3 className="text-2xl font-bold text-primary mb-2">Perfil Profissional</h3>
-              </div>
-              
+                <h3 className="text-2xl font-bold text-primary mb-2">Perfil Profissional</h3>              
               <div className="space-y-4">
                 <div className="flex justify-between items-center">
                   <span className="text-muted-foreground">Idade:</span>
