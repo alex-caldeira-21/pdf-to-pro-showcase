@@ -29,21 +29,60 @@ const ContactForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      // Enviar dados para o webhook
+      const response = await fetch('https://tecnia-n8n.thegkr.easypanel.host/webhook/resposta', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          subject: formData.subject,
+          message: formData.message,
+          timestamp: new Date().toISOString(),
+          source: 'portfolio_contact_form'
+        }),
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Mensagem Enviada!",
+          description: "Sua mensagem foi enviada com sucesso. Retornarei o contato em breve.",
+        });
+        
+        // Reset do formulário
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          subject: "",
+          message: ""
+        });
+      } else {
+        throw new Error('Erro no envio');
+      }
+    } catch (error) {
+      console.error('Erro ao enviar:', error);
       toast({
-        title: "Mensagem Enviada!",
-        description: "Sua mensagem foi enviada com sucesso. Retornarei o contato em breve.",
+        title: "Erro ao enviar",
+        description: "Houve um problema ao enviar sua mensagem. Tente novamente ou entre em contato diretamente.",
+        variant: "destructive"
       });
+    } finally {
       setIsSubmitting(false);
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        subject: "",
-        message: ""
-      });
-    }, 2000);
+    }
+  };
+
+  // Função para abrir WhatsApp
+  const handleWhatsAppContact = () => {
+    const phoneNumber = "5514996831894"; // Seu número com código do país
+    const message = "Olá! Vim através do seu portfólio e gostaria de conversar sobre oportunidades.";
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    window.open(whatsappURL, '_blank');
   };
 
   return (
@@ -228,14 +267,15 @@ const ContactForm = () => {
                 Estou disponível para oportunidades em tempo integral, projetos freelancer ou consultorias. 
                 Entre em contato para discutirmos como posso agregar valor ao seu negócio.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="bg-background text-primary hover:bg-background/90">
-                  <Phone className="w-5 h-5 mr-2" />
-                  Ligar Agora
-                </Button>
-                <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                  <Mail className="w-5 h-5 mr-2" />
-                  Enviar Email
+              <div className="flex justify-center">
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+                  onClick={handleWhatsAppContact}
+                >
+                  <MessageSquare className="w-5 h-5 mr-2" />
+                  Conversar no WhatsApp
                 </Button>
               </div>
             </CardContent>
