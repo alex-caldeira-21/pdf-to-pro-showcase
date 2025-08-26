@@ -69,6 +69,11 @@ const HeroSection = () => {
                 size="lg" 
                 className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
               >
+                <a 
+                    href="https://drive.google.com/uc?export=download&id=1i1YX6Fk43skS2dSH9gTAGGLubqBMUREW"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                 <Download className="w-5 h-5 mr-2" />
                 Download CV
               </Button>
@@ -77,8 +82,14 @@ const HeroSection = () => {
                 variant="outline" 
                 className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
               >
+                <a
+                    href="https://wa.me/5514996831894?text=Ol%C3%A1%20Alex!%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar." 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                        >
                 <ExternalLink className="w-5 h-5 mr-2" />
                 Entre em Contato
+                  </a>
               </Button>
             </motion.div>
           </motion.div>
