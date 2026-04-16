@@ -114,7 +114,7 @@ const HeroSection = () => {
               <div className="space-y-4">
                 <div className="flex justify-between items-center">
                   <span className="text-muted-foreground">Idade:</span>
-                  <span className="font-semibold text-foreground">30 anos</span>
+                  <span className="font-semibold text-foreground">31 anos</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-muted-foreground">Estado Civil:</span>
